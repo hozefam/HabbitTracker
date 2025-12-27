@@ -1,0 +1,5 @@
+C:\Hozefa\Passion Projects\HabbitTracker\backend\HabbitTracker.Database\bin\Debug\HabbitTracker.Database.dacpac
+C:\Hozefa\Passion Projects\HabbitTracker\backend\HabbitTracker.Database\obj\Debug\Model.xml
+C:\Hozefa\Passion Projects\HabbitTracker\backend\HabbitTracker.Database\obj\Debug\refactor.xml
+C:\Hozefa\Passion Projects\HabbitTracker\backend\HabbitTracker.Database\obj\Debug\postdeploy.sql
+C:\Hozefa\Passion Projects\HabbitTracker\backend\HabbitTracker.Database\obj\Debug\predeploy.sql
