@@ -1,101 +1,186 @@
-# HabitTracker
+# Habit Tracker
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+An Angular monorepo application built with Nx, featuring Jest for testing and Tailwind CSS for styling.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+## 🚀 Tech Stack
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/angular-standalone-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+- **Framework**: Angular (standalone components)
+- **Monorepo Tool**: Nx
+- **Testing**: Jest
+- **Styling**: Tailwind CSS v3
+- **Linting**: ESLint
+- **Package Manager**: npm
 
-## Run tasks
+## 📦 Project Structure
 
-To run the dev server for your app, use:
+```
+HabbitTracker/
+├── src/              # Main application source code
+│   ├── app/          # Angular application components
+│   └── styles.css    # Global styles with Tailwind directives
+├── dist/             # Build output
+├── node_modules/     # Dependencies
+└── libs/             # Shared libraries (future)
+```
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or later)
+- npm
+
+### Installation
+
+Dependencies are already installed. If needed, run:
+
+```sh
+npm install
+```
+
+## 📝 Development
+
+### Run Development Server
+
+Start the development server:
 
 ```sh
 npx nx serve habit-tracker
+# or
+npm start
 ```
 
-To create a production bundle:
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any source files.
+
+### Build for Production
+
+Create a production build:
 
 ```sh
 npx nx build habit-tracker
+# or
+npm run build
 ```
 
-To see all available targets to run for a project, run:
+Build artifacts will be stored in the `dist/` directory.
+
+### Run Tests
+
+Execute Jest unit tests:
+
+```sh
+npx nx test habit-tracker
+# or
+npm test
+```
+
+### Lint Code
+
+Run ESLint:
+
+```sh
+npx nx lint habit-tracker
+# or
+npm run lint
+```
+
+## 📚 Creating Libraries
+
+Generate a new shared library:
+
+```sh
+npx nx g @nx/angular:lib <library-name>
+```
+
+Example library types:
+
+- **Feature libraries**: `npx nx g @nx/angular:lib feature-habits`
+- **UI libraries**: `npx nx g @nx/angular:lib ui-components`
+- **Data access libraries**: `npx nx g @nx/angular:lib data-access`
+- **Utility libraries**: `npx nx g @nx/angular:lib utils`
+
+## 🎨 Tailwind CSS
+
+Tailwind CSS v3 is configured and ready to use. Utility classes are available throughout the application.
+
+### Example Usage
+
+```html
+<div class="flex items-center justify-center h-screen bg-gray-100">
+  <h1 class="text-4xl font-bold text-blue-600">Hello Tailwind!</h1>
+</div>
+```
+
+Configuration file: `tailwind.config.js`
+
+## 🧪 Testing with Jest
+
+Jest is configured for unit testing. Test files should be placed next to the components they test with a `.spec.ts` extension.
+
+### Example Test
+
+```typescript
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MyComponent } from './my-component';
+
+describe('MyComponent', () => {
+  let component: MyComponent;
+  let fixture: ComponentFixture<MyComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [MyComponent],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(MyComponent);
+    component = fixture.componentInstance;
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+```
+
+## 🔍 Nx Commands
+
+### View Project Graph
+
+Visualize your workspace dependencies:
+
+```sh
+npx nx graph
+```
+
+### List Available Plugins
+
+```sh
+npx nx list
+```
+
+### Show Project Details
 
 ```sh
 npx nx show project habit-tracker
 ```
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+## 📖 Learn More
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- [Nx Documentation](https://nx.dev)
+- [Angular Documentation](https://angular.dev)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Jest Documentation](https://jestjs.io/docs/getting-started)
 
-## Add new projects
+## 🤝 Contributing
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
+1. Create a new branch for your feature
+2. Make your changes
+3. Write/update tests
+4. Run tests and linting
+5. Submit a pull request
 
-Use the plugin's generator to create new projects.
+## 📄 License
 
-To generate a new application, use:
+This project is licensed under the MIT License.
 
-```sh
-npx nx g @nx/angular:app demo
-```
-
-To generate a new library, use:
-
-```sh
-npx nx g @nx/angular:lib mylib
-```
-
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
-
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Set up CI!
-
-### Step 1
-
-To connect to Nx Cloud, run the following command:
-
-```sh
-npx nx connect
-```
-
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
-
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-### Step 2
-
-Use the following command to configure a CI workflow for your workspace:
-
-```sh
-npx nx g ci-workflow
-```
-
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/getting-started/tutorials/angular-standalone-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
 - [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)

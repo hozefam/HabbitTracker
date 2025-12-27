@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { HeaderComponent } from './layout/header/header.component';
 import { RouterModule } from '@angular/router';
-import { NxWelcome } from './nx-welcome';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
 
 @Component({
-  imports: [NxWelcome, RouterModule],
+  imports: [RouterModule, SidebarComponent, HeaderComponent],
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
