@@ -84,10 +84,12 @@ import { FormsModule } from '@angular/forms';
         </form>
 
         <div class="mt-6 border-t pt-6">
-          <div class="text-sm text-gray-600">
-            <p class="font-medium mb-2">Test Account:</p>
-            <p>Email: <span class="font-mono bg-gray-100 px-2 py-1 rounded">test@habbittracker.com</span></p>
-            <p>Password: <span class="font-mono bg-gray-100 px-2 py-1 rounded">Test@123</span></p>
+          <div class="text-sm text-gray-600 bg-blue-50 p-4 rounded-lg">
+            <p class="font-medium mb-2 text-blue-900">👉 First Time Setup:</p>
+            <p class="mb-2">Please register a new account first by clicking "Sign up" above.</p>
+            <p>Use these credentials:</p>
+            <p class="mt-1">Email: <span class="font-mono bg-white px-2 py-1 rounded">test@habbittracker.com</span></p>
+            <p>Password: <span class="font-mono bg-white px-2 py-1 rounded">Test@123</span></p>
           </div>
         </div>
       </div>
