@@ -14,6 +14,10 @@ CREATE TABLE [dbo].[Habits]
     [UpdatedAt] DATETIME2 NOT NULL DEFAULT GETUTCDATE(),
     CONSTRAINT [FK_Habits_Users] FOREIGN KEY ([UserId]) REFERENCES [dbo].[Users]([Id]) ON DELETE CASCADE
 );
+GO
 
 CREATE INDEX [IX_Habits_UserId] ON [dbo].[Habits] ([UserId]);
+GO
+
 CREATE INDEX [IX_Habits_Category] ON [dbo].[Habits] ([Category]);
+GO

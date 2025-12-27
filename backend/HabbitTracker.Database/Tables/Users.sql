@@ -11,6 +11,10 @@ CREATE TABLE [dbo].[Users]
     [IsActive] BIT NOT NULL DEFAULT 1,
     [LastLoginAt] DATETIME2 NULL
 );
+GO
 
 CREATE INDEX [IX_Users_Email] ON [dbo].[Users] ([Email]);
+GO
+
 CREATE INDEX [IX_Users_Username] ON [dbo].[Users] ([Username]);
+GO

@@ -3,9 +3,30 @@
   <Sdk Name="Microsoft.Build.Sql" Version="2.0.0" />
   <PropertyGroup>
     <Name>HabbitTracker.Database</Name>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql170DatabaseSchemaProvider</DSP>
+    <ProjectGuid>{11cbe7ca-a8b9-4284-9fad-5b7472fd6e7f}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
     <ModelCollation>1033, CI</ModelCollation>
+    <TargetFramework>net8.0</TargetFramework>
+    <SqlServerVersion>Sql150</SqlServerVersion>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <EnableDefaultSqlItems>false</EnableDefaultSqlItems>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Tables\" />
+    <Folder Include="StoredProcedures\" />
+    <Folder Include="Scripts\" />
+    <Folder Include="Scripts\SeedData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\Users.sql" />
+    <Build Include="Tables\Habits.sql" />
+    <Build Include="Tables\HabitLogs.sql" />
+    <Build Include="Tables\RefreshTokens.sql" />
+    <Build Include="StoredProcedures\sp_GetUserHabits.sql" />
+    <Build Include="StoredProcedures\sp_GetHabitStreak.sql" />
+    <Build Include="StoredProcedures\sp_GetUserDashboardStats.sql" />
+  </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\SeedData\001_InitialData.sql" />
   </ItemGroup>

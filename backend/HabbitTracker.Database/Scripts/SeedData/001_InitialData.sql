@@ -3,15 +3,19 @@
 
 -- Insert test user (password: Test@123 - hashed)
 SET IDENTITY_INSERT [dbo].[Users] ON;
+GO
 
 INSERT INTO [dbo].[Users] ([Id], [Username], [Email], [PasswordHash], [FirstName], [LastName], [IsActive])
 VALUES 
 (1, 'testuser', 'test@habbittracker.com', 'AQAAAAIAAYagAAAAEBqE8JvKz1v+M3xGqGvXqJ3vJ8TpL3yX+qF5kW9nH2zD4sE7fR6pQ8tL0mN1oP2rK==', 'Test', 'User', 1);
+GO
 
 SET IDENTITY_INSERT [dbo].[Users] OFF;
+GO
 
 -- Insert sample habits
 SET IDENTITY_INSERT [dbo].[Habits] ON;
+GO
 
 INSERT INTO [dbo].[Habits] ([Id], [UserId], [Name], [Description], [Category], [Frequency], [TargetCount], [Color], [Icon], [IsActive])
 VALUES 
@@ -20,8 +24,10 @@ VALUES
 (3, 1, 'Drink Water', 'Drink 8 glasses of water', 'Health', 'Daily', 8, '#06B6D4', 'water', 1),
 (4, 1, 'Meditate', '10 minutes of meditation', 'Wellness', 'Daily', 1, '#8B5CF6', 'meditation', 1),
 (5, 1, 'Practice Coding', 'Code for 1 hour', 'Learning', 'Daily', 1, '#F59E0B', 'code', 1);
+GO
 
 SET IDENTITY_INSERT [dbo].[Habits] OFF;
+GO
 
 -- Insert some sample logs (last 7 days)
 DECLARE @Today DATE = CAST(GETUTCDATE() AS DATE);
