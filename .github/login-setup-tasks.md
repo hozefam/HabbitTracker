@@ -5,6 +5,7 @@
 ### Tasks
 
 #### Backend Authentication
+
 - [ ] Set up authentication service
 - [ ] Implement JWT token management
 - [ ] Create login API endpoint
@@ -14,6 +15,7 @@
 - [ ] Create password reset flow
 
 #### Frontend Components
+
 - [ ] Create login page component
 - [ ] Create registration page component
 - [ ] Create forgot password component
@@ -23,6 +25,7 @@
 - [ ] Add token interceptor for HTTP requests
 
 #### UI/UX
+
 - [ ] Design login page UI
 - [ ] Design registration page UI
 - [ ] Add loading states
@@ -31,6 +34,7 @@
 - [ ] Add "Remember Me" functionality
 
 #### Security
+
 - [ ] Implement CSRF protection
 - [ ] Add rate limiting
 - [ ] Secure token storage
@@ -38,6 +42,7 @@
 - [ ] Implement refresh token mechanism
 
 #### Testing
+
 - [ ] Unit tests for authentication service
 - [ ] Component tests for login/registration
 - [ ] E2E tests for authentication flow

@@ -1,23 +1,41 @@
 # Habit Tracker
 
-An Angular monorepo application built with Nx, featuring Jest for testing and Tailwind CSS for styling.
+A full-stack habit tracking application with Angular frontend and .NET Web API backend.
 
 ## 🚀 Tech Stack
+
+### Frontend
 
 - **Framework**: Angular (standalone components)
 - **Monorepo Tool**: Nx
 - **Testing**: Jest
 - **Styling**: Tailwind CSS v3
 - **Linting**: ESLint
-- **Package Manager**: npm
+
+### Backend
+
+- **Framework**: .NET 10 Web API
+- **Authentication**: JWT Bearer
+- **Database**: SQL Server with Entity Framework Core
+- **Documentation**: Swagger/OpenAPI
 
 ## 📦 Project Structure
 
 ```
 HabbitTracker/
-├── src/              # Main application source code
-│   ├── app/          # Angular application components
-│   └── styles.css    # Global styles with Tailwind directives
+├── src/              # Angular frontend
+│   ├── app/
+│   │   ├── layout/   # Sidebar & Header components
+│   │   └── pages/    # Dashboard & feature pages
+│   └── styles.css    # Global styles with Tailwind
+├── backend/          # .NET Web API
+│   ├── HabbitTracker.sln
+│   └── HabbitTracker.API/
+│       ├── Controllers/
+│       ├── Models/
+│       └── Services/
+├── dist/             # Build output
+└── libs/             # Shared libraries (future)
 ├── dist/             # Build output
 ├── node_modules/     # Dependencies
 └── libs/             # Shared libraries (future)
@@ -27,34 +45,70 @@ HabbitTracker/
 
 ### Prerequisites
 
+**Frontend:**
+
 - Node.js (v18 or later)
 - npm
 
+**Backend:**
+
+- .NET 10 SDK
+- SQL Server (LocalDB or full installation)
+
 ### Installation
 
-Dependencies are already installed. If needed, run:
+**Frontend:**
 
 ```sh
 npm install
 ```
 
+**Backend:**
+
+```sh
+cd backend/HabbitTracker.API
+dotnet restore
+```
+
 ## 📝 Development
 
-### Run Development Server
+### Run Frontend Development Server
 
 Start the development server:
 
-```sh
+````sh
 npx nx serve habit-tracker
-# or
+Navigate to `http://localhost:4200/`
+
+### Run Backend API
+
+```sh
+cd backend/HabbitTracker.API
+dotnet run
+````
+
+API available at:
+
+- `https://localhost:5001` (HTTPS)
+- `https://localhost:5001/swagger` (API Documentation)
+
+### Run Full Stack
+
+**Terminal 1 - Frontend:**
+
+```sh
 npm start
 ```
 
-Navigate to `http://localhost:4200/`. The app will automatically reload if you change any source files.
+**Terminal 2 - Backend:**
+
+```sh
+cd backend/HabbitTracker.API && dotnet run
+```
 
 ### Build for Production
 
-Create a production build:
+**Frontend:**
 
 ```sh
 npx nx build habit-tracker
@@ -62,11 +116,17 @@ npx nx build habit-tracker
 npm run build
 ```
 
-Build artifacts will be stored in the `dist/` directory.
+**Backend:**
+
+```sh
+cd backend/HabbitTracker.API
+dotnet build -c Release
+dotnet publish -c Release -o ./publish
+```
 
 ### Run Tests
 
-Execute Jest unit tests:
+**Frontend (Jest):**
 
 ```sh
 npx nx test habit-tracker
